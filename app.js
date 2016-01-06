@@ -81,9 +81,9 @@ alert("Right on the money " + userName + "! Good shit!");
 console.log("It took " + userName + " " + guess + " guesses to guess my age.");
 console.log(userName + " got " + count + " answers correct.");
 if (count === 0) {
-  alert("You guessed all of my answers incorrectly...get your shit together, " + userName + "! And it only took " + guess + " guesses to get my age right.");
+  alert("You guessed all of my answer incorrectly...get your shit together, " + userName + "! And it only took " + guess + " guesses to get my age right.");
 } else if (count === 1) {
-  alert("You guessed " + count + " anwser correctly. That's not that great, " + userName + "! And it only took " + guess + " guesses to get my age right.");
+  alert("You guessed " + count + " answer correctly. That's not that great, " + userName + "! And it only took " + guess + " guesses to get my age right.");
 } else if (count === 2) {
   alert("You guessed " + count + " answers correctly. Not bad..not bad. And it only took " + guess + " guesses to get my age right.");
 } else if(count === 3) {
