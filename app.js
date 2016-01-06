@@ -9,7 +9,7 @@ while (incorrectAnswer === true){
   if (A1 === "N" ||  A1 === "NO") {
     console.log(userName + " got the answer right!");
     alert("You are correct " + userName + "! I was actually born in Kenya, but have been in the US since I was 2.");
-    count += 1;
+    count++;
     incorrectAnswer = false;
   } else if(A1 === "Y" || A1 === "YES") {
     console.log(userName + " got it wrong.");
@@ -28,7 +28,7 @@ while (incorrectAnswer === true){
   if (A2 === "N" || A2=== "NO") {
     console.log(userName + " got it right!");
     alert("Right on, " + userName + "! I used to have one, but I didn't renew it on my latest license.");
-    count += 1;
+    count++;
     incorrectAnswer = false;
   } else if (A2 === "Y" || A2=== "YES") {
     console.log(userName + " got the answer wrong.");
@@ -47,7 +47,7 @@ while (incorrectAnswer === true){
   if (A3 === "Y" || A3=== "YES") {
     console.log("It's located in Seattle, so " + userName + " got the right answer!");
     alert("Good job, " + userName + "! I might have lied about it being a hard one, but you sir are a genius!");
-    count += 1;
+    count++;
     incorrectAnswer = false;
   } else if (A3 === "N" || A3=== "NO") {
     console.log(userName + " got the wrong answer!");
@@ -78,16 +78,14 @@ while (A4 !== 23) {
 alert("Right on the money " + userName + "! Good shit!");
 
 // Notify the User of how they did & how many guesses it took on the 4th Question
-guess = parseInt(guess);
-console.log("It took " + userName + guess + " guesses to guess my age.");
-count = parseInt(count);
+console.log("It took " + userName + " " + guess + " guesses to guess my age.");
 console.log(userName + " got " + count + " answers correct.");
-if (count = 0) {
+if (count === 0) {
   alert("You guessed all of my answers incorrectly...get your shit together, " + userName + "! And it only took " + guess + " guesses to get my age right.");
-} else if (count = 1) {
+} else if (count === 1) {
   alert("You guessed " + count + " anwser correctly. That's not that great, " + userName + "! And it only took " + guess + " guesses to get my age right.");
-} else if (count = 2) {
+} else if (count === 2) {
   alert("You guessed " + count + " answers correctly. Not bad..not bad. And it only took " + guess + " guesses to get my age right.");
-} else {
+} else if(count === 3) {
   alert("You guessed ALL the answers correctly! I gotta admit though, that's kinda creepy, " + userName + ". And it only took " + guess + " guesses to get my age right.");
 }
