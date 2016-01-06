@@ -44,16 +44,18 @@
 
       // 4th Question
       var A4 = prompt("I hope the last 3 questions weren't too hard, " + userName + ". This last one is simple, I promise. How old am I?");
-      if (A4 > 23) {
-        console.log(userName + " guessed too high.");
-        alert("You guessed too high, " + userName + ".");
-      } else if (A4 < 23) {
-        console.log(userName + " guessed too low.");
-        alert("You guessed too low, " + userName + ".");
-      } else {
-        console.log("Somehow " + userName + " guessed right on the money!");
-        alert("Right on the money " + userName + "! AMAZING!");
+      A4 = parseInt(A4);
+      console.log(A4);
+      while (A4 !== 23) {
+        if (A4 > 23) {
+          console.log(userName + " guessed too high.");
+          A4 = parseInt(prompt("You guessed too high, " + userName + ". Guess again!"));
+        } else {
+          console.log(userName + " guessed too low.");
+          A4 = parseInt(prompt("You guessed too low, " + userName + ". Guess again!"));
+        }
       }
+      alert("Right on the money " + userName + "! AMAZING!");
     </script>
   </body>
 </html>
