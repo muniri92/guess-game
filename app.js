@@ -2,6 +2,13 @@ var userName = prompt("What's your name?");
 alert("What's up, " + userName+ "! Press 'OK' when you're ready for this game to start!");
 var count = 0;
 
+// declare variables for page data
+
+var res1 = document.getElementById('result1');
+var res2 = document.getElementById('result2');
+var res3 = document.getElementById('result3');
+var res4 = document.getElementById('result4');
+
 // 1st Question
 function question1() {
   var incorrectAnswer = true;
@@ -9,16 +16,19 @@ function question1() {
     var A1 = prompt("Be sure to reply with yes or no, thanks! Was I, Munir Ibrahim, born in the United States?").toUpperCase();
     if (A1 === "N" ||  A1 === "NO") {
       console.log(userName + " got the answer right!");
-      alert("You are correct " + userName + "! I was actually born in Kenya, but have been in the US since I was 2.");
+//      alert("You are correct " + userName + "! I was actually born in Kenya, but have been in the US since I was 2.");
+      res1.textContent = 'You are correct ' + userName + '! I was actually born in Kenya, but have been in the US since I was 2.';
       count++;
       incorrectAnswer = false;
     } else if(A1 === "Y" || A1 === "YES") {
       console.log(userName + " got it wrong.");
-      alert("OHHH, wrong answer " + userName + ", I wasn't born in the US. Maybe you'll get the next question right.");
+//      alert("OHHH, wrong answer " + userName + ", I wasn't born in the US. Maybe you'll get the next question right.");
+      res1.textContent = 'OHHH, wrong answer ' + userName + ', I wasn\'t born in the US. Maybe you\'ll get the next question right.';
       incorrectAnswer = false;
     } else {
       console.log(userName + " has guessed an answer that is not possible.");
-      alert("I'm sorry, " + userName + ", you have guessed outside of your boundaries, try again.");
+//      alert("I'm sorry, " + userName + ", you have guessed outside of your boundaries, try again.");
+      res1.textContent = 'I\'m sorry, ' + userName + ', you have guessed outside of your boundaries, try again.';
     }
   }
 }
