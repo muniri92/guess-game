@@ -8,6 +8,7 @@ var res1 = document.getElementById('result1');
 var res2 = document.getElementById('result2');
 var res3 = document.getElementById('result3');
 var res4 = document.getElementById('result4');
+var res5 = document.getElementById('result5');
 
 // 1st Question
 function question1() {
@@ -99,7 +100,8 @@ function question4() {
       guess += 1;
     }
   }
-  alert("Right on the money " + userName + "! Good shit!");
+//  alert("Right on the money " + userName + "! Good shit!");
+res4.textContent = 'Right on the money ' + userName + '! Good shit!';
 }
 
 question1();
@@ -112,11 +114,15 @@ question4();
 console.log("It took " + userName + " " + guess + " guesses to guess my age.");
 console.log(userName + " got " + count + " answers correct.");
 if (count === 0) {
-  alert("You guessed all of my answer incorrectly...get your shit together, " + userName + "! And it only took " + guess + " guesses to get my age right.");
+//  alert("You guessed all of my answer incorrectly...get your shit together, " + userName + "! And it only took " + guess + " guesses to get my age right.");
+res5.textContent = 'You guessed all of my answer incorrectly...get your shit together, ' + userName + '! And it only took ' + guess + ' guesses to get my age right.';
 } else if (count === 1) {
-  alert("You guessed " + count + " answer correctly. That's not that great, " + userName + "! And it only took " + guess + " guesses to get my age right.");
+//  alert("You guessed " + count + " answer correctly. That's not that great, " + userName + "! And it only took " + guess + " guesses to get my age right.");
+res5.textContent = 'You guessed ' + count + ' answer correctly. That\'s not that great, ' + userName + '! And it only took ' + guess + ' guesses to get my age right."';
 } else if (count === 2) {
-  alert("You guessed " + count + " answers correctly. Not bad..not bad. And it only took " + guess + " guesses to get my age right.");
+//  alert("You guessed " + count + " answers correctly. Not bad..not bad. And it only took " + guess + " guesses to get my age right.");
+res5.textContent = 'You guessed ' + count + ' answers correctly. Not bad..not bad. And it only took ' + guess + ' guesses to get my age right.';
 } else if(count === 3) {
-  alert("You guessed ALL the answers correctly! I gotta admit though, that's kinda creepy, " + userName + ". And it only took " + guess + " guesses to get my age right.");
+//  alert("You guessed ALL the answers correctly! I gotta admit though, that's kinda creepy, " + userName + ". And it only took " + guess + " guesses to get my age right.");
+res5.textContent = 'You guessed ALL the answers correctly! I gotta admit though, that\'s kinda creepy, ' + userName + '. And it only took ' + guess + ' guesses to get my age right.';
 }
