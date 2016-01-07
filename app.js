@@ -41,16 +41,19 @@ function question2() {
     var A2 = prompt("Do I currently have a motorcycle license?").toUpperCase();
     if (A2 === "N" || A2=== "NO") {
       console.log(userName + " got it right!");
-      alert("Right on, " + userName + "! I used to have one, but I didn't renew it on my latest license.");
+//      alert("Right on, " + userName + "! I used to have one, but I didn't renew it on my latest license.");
+      res2.textContent = 'Right on, ' + userName + '! I used to have one, but I didn\'t renew it on my latest license.';
       count++;
       incorrectAnswer = false;
     } else if (A2 === "Y" || A2=== "YES") {
       console.log(userName + " got the answer wrong.");
-      alert("Wrong " + userName + "! I don't have one anymore unfortunately.");
+//      alert("Wrong " + userName + "! I don't have one anymore unfortunately.");
+      res2.textContent = 'Wrong ' + userName + '! I don\'t have one anymore unfortunately.';
       incorrectAnswer = false;
     } else {
       console.log(userName + " has guessed an answer that is not possible.");
-      alert("I'm sorry, " + userName + ", you have guessed outside of your boundaries, try again.");
+//      alert("I'm sorry, " + userName + ", you have guessed outside of your boundaries, try again.");
+      res2.textContent = 'I\'m sorry, ' + userName + ', you have guessed outside of your boundaries, try again.';
     }
   }
 }
@@ -62,16 +65,19 @@ function question3() {
     var A3 = prompt("This is the 3rd question " + userName + "! Be warned, it's not an easy one! Is Code Fellows HQ located in Seattle?").toUpperCase();
     if (A3 === "Y" || A3=== "YES") {
       console.log("It's located in Seattle, so " + userName + " got the right answer!");
-      alert("Good job, " + userName + "! I might have lied about it being a hard one, but you sir are a genius!");
+//      alert("Good job, " + userName + "! I might have lied about it being a hard one, but you sir are a genius!");
+      res3.textContent = 'Good job, ' + userName + '! I might have lied about it being a hard one, but you sir are a genius!';
       count++;
       incorrectAnswer = false;
     } else if (A3 === "N" || A3=== "NO") {
       console.log(userName + " got the wrong answer!");
-      alert("Dammit " + userName + "! Seattle IS the Code Fellows HQ. Don't fail me on this next one!");
+//      alert("Dammit " + userName + "! Seattle IS the Code Fellows HQ. Don't fail me on this next one!");
+      res3.textContent = 'Dammit ' + userName + '! Seattle IS the Code Fellows HQ. Don\'t fail me on this next one!';
       incorrectAnswer = false;
     } else {
       console.log(userName + " has guessed an answer that is not possible.");
-      alert("I'm sorry, " + userName + ", you have guessed outside of your boundaries, try again.");
+//      alert("I'm sorry, " + userName + ", you have guessed outside of your boundaries, try again.");
+      res3.textContent = 'I\'m sorry, ' + userName + ', you have guessed outside of your boundaries, try again.';
     }
   }
 }
