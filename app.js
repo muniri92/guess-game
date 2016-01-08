@@ -9,31 +9,9 @@ var res4 = document.getElementById('result4');
 var res5 = document.getElementById('result5');
 
  var quesData = [
- ['What\'s up, ' + userName + '! Let\'s jump right in! Was I born in the United States?',
- 'N',
- 'NO',
- 'Y',
- 'YES',
- 'You are correct ' + userName + '! I was born in Kenya, but moved to the US when I was 2 yrs old.',
- 'Ohhh, wrong answer ' + userName + ', I wasn\'t born in the US. Maybe you\'ll get the next question right.',
- res1],
- ['Do I currently have a motorcycle license?',
- 'N',
- 'NO',
- 'Y',
- 'YES',
- 'Right on, ' + userName + '! I used to have one, but I didn\'t renew it on my latest license.',
- 'Wrong answer ' + userName + '! I used too, but I don\'t have one anymore unfortunately.',
- res2],
- ['Is Code Fellows HQ located in Seattle?',
- 'Y',
- 'YES',
- 'N',
- 'NO',
- 'Good job, ' + userName + '! I may have lied about it being easy, but you\'re a genius!',
- 'Dammit ' + userName + '! Seattle IS the Code Fellows HQ. Don\'t fail me on this next one!',
- res3]
-
+ ['What\'s up, ' + userName + '! Let\'s jump right in! Was I born in the United States?', 'N', 'NO', 'Y', 'YES', 'You are correct ' + userName + '! I was born in Kenya, but moved to the US when I was 2 yrs old.', 'Ohhh, wrong answer ' + userName + ', I wasn\'t born in the US. Maybe you\'ll get the next question right.', res1],
+ ['Do I currently have a motorcycle license?', 'N', 'NO', 'Y', 'YES', 'Right on, ' + userName + '! I used to have one, but I didn\'t renew it on my latest license.', 'Wrong answer ' + userName + '! I used too, but I don\'t have one anymore unfortunately.', res2],
+ ['Is Code Fellows HQ located in Seattle?', 'Y', 'YES', 'N', 'NO', 'Good job, ' + userName + '! I may have lied about it being easy, but you\'re a genius!', 'Dammit ' + userName + '! Seattle IS the Code Fellows HQ. Don\'t fail me on this next one!', res3]
  ];
 
 // declare variables for page data
@@ -45,17 +23,20 @@ function quesAndAns() {
   while (incorrectAnswer === true){
     var A1 = prompt(quesData[i][0]).toUpperCase();
     if (A1 === quesData[i][1] ||  A1 === quesData[i][2]) {
+      // answer is correct
       console.log(userName + " got the answer right!");
       quesData[i][7].textContent = quesData[i][5];
       quesData[i][7].className = 'right';
       count++;
       incorrectAnswer = false;
     } else if(A1 === quesData[i][3] || A1 === quesData[i][4]) {
+      // answer is false
       console.log(userName + " got it wrong.");
       quesData[i][7].textContent = quesData[i][6];
       quesData[i][7].className = 'wrong';
       incorrectAnswer = false;
     } else {
+      // answer is not yes or no
       console.log(userName + " has guessed an answer that is not possible.");
       quesData[i][7].textContent = 'I\'m sorry, ' + userName + ', you have guessed outside of your boundaries, try again.';
     }
@@ -81,11 +62,10 @@ function question4() {
       guess += 1;
     }
   }
-//  alert("Right on the money " + userName + "! Good shit!");
 res4.textContent = 'Right on the money ' + userName + '! Good shit!';
 }
 
-
+//loop through the array questions
 for(i = 0; i < quesData.length; i++) {
   quesAndAns();
 }
@@ -96,15 +76,11 @@ question4();
 console.log("It took " + userName + " " + guess + " guesses to guess my age.");
 console.log(userName + " got " + count + " answers correct.");
 if (count === 0) {
-//  alert("You guessed all of my answer incorrectly...get your shit together, " + userName + "! And it only took " + guess + " guesses to get my age right.");
 res5.textContent = 'You guessed all of my answer incorrectly...get your shit together, ' + userName + '! And it only took ' + guess + ' guesses to get my age right.';
 } else if (count === 1) {
-//  alert("You guessed " + count + " answer correctly. That's not that great, " + userName + "! And it only took " + guess + " guesses to get my age right.");
 res5.textContent = 'You guessed ' + count + ' answer correctly. That\'s not that great, ' + userName + '! And it only took ' + guess + ' guesses to get my age right."';
 } else if (count === 2) {
-//  alert("You guessed " + count + " answers correctly. Not bad..not bad. And it only took " + guess + " guesses to get my age right.");
 res5.textContent = 'You guessed ' + count + ' answers correctly. Not bad..not bad. And it only took ' + guess + ' guesses to get my age right.';
 } else if(count === 3) {
-//  alert("You guessed ALL the answers correctly! I gotta admit though, that's kinda creepy, " + userName + ". And it only took " + guess + " guesses to get my age right.");
 res5.textContent = 'You guessed ALL the answers correctly! I gotta admit though, that\'s kinda creepy, ' + userName + '. And it only took ' + guess + ' guesses to get my age right.';
 }
