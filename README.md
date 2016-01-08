@@ -7,4 +7,9 @@ This project asks the user multiple questions about myself and spits out how man
 One of my peers, Zach, helped me better understand while loop, which I then implemented for questions 1-3.
 
 January 7th, 2016 -
-Moved question code into functions, and replaced alerts with writes to the page text. Driver: Lex Myers; Navigator: Munir Ibrahim.
+Moved question code into functions, and replaced alerts with writes to the page text.
+Driver: Lex Myers
+Navigator: Munir Ibrahim
+
+January 7th, 2015 - Remastered 
+I came back and cleaned up the code a bit. Added a fifth question which used an array and a for loop. Fixed an issue with a couple ID tags.
