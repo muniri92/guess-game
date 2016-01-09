@@ -2,43 +2,63 @@ var userName = prompt("What's your name?");
 alert("What's up, " + userName+ "! Press 'OK' when you're ready for this game to start!");
 var count = 0;
 
-var res1 = document.getElementById('result1');
-var res2 = document.getElementById('result2');
-var res3 = document.getElementById('result3');
-var res4 = document.getElementById('result4');
-var res5 = document.getElementById('result5');
+//                       PLAYING WITH ARRAYS
 
- var quesData = [
- ['What\'s up, ' + userName + '! Let\'s jump right in! Was I born in the United States?', 'N', 'NO', 'Y', 'YES', 'You are correct ' + userName + '! I was born in Kenya, but moved to the US when I was 2 yrs old.', 'Ohhh, wrong answer ' + userName + ', I wasn\'t born in the US. Maybe you\'ll get the next question right.', res1],
- ['Do I currently have a motorcycle license?', 'N', 'NO', 'Y', 'YES', 'Right on, ' + userName + '! I used to have one, but I didn\'t renew it on my latest license.', 'Wrong answer ' + userName + '! I used too, but I don\'t have one anymore unfortunately.', res2],
- ['Is Code Fellows HQ located in Seattle?', 'Y', 'YES', 'N', 'NO', 'Good job, ' + userName + '! I may have lied about it being easy, but you\'re a genius!', 'Dammit ' + userName + '! Seattle IS the Code Fellows HQ. Don\'t fail me on this next one!', res3]
- ];
+// Questions Function
+function questionFunc() {
+  var res1 = document.getElementById('resultOne');
+  var res2 = document.getElementById('resultTwo');
+  var res3 = document.getElementById('resultThree');
+  var correctAnswer = false;
+  // Array of questions
+  var quesAndAns = [
+  ['What\'s up, ' + userName + '! Let\'s jump right in! Was I born in the United States?', 'You are correct ' + userName + '! I was born in Kenya, but moved to the US when I was 2 yrs old.',
+  'N',
+  'NO',
+  'Y',
+  'YES',
+  'You are correct ' + userName + '! I was born in Kenya, but moved to the US when I was 2 yrs old.',
+  'Ohhh, wrong answer ' + userName + ', I wasn\'t born in the US. Maybe you\'ll get the next question right.',
+  res1],
+  ['Do I currently have a motorcycle license?', 'Right on, ' + userName + '! I used to have one, but I didn\'t renew it on my latest license.',
+  'N',
+  'NO',
+  'Y',
+  'YES',
+  'Right on, ' + userName + '! I used to have one, but I didn\'t renew it on my latest license.',
+  'Wrong answer ' + userName + '! I used too, but I don\'t have one anymore unfortunately.',
+  res2],
+  ['Is Code Fellows HQ located in Seattle?', 'Good job, ' + userName + '! I may have lied about it being easy, but you\'re a genius!',
+  'N',
+  'NO',
+  'Y',
+  'YES',
+  'Good job, ' + userName + '! I may have lied about it being easy, but you\'re a genius!',
+  'Dammit ' + userName + '! Seattle IS the Code Fellows HQ. Don\'t fail me on this next one!',
+  res3]
 
-// declare variables for page data
+  ];
 
+  for(i = 0; i < (quesAndAns.length); i++) {
+    var answers = prompt(quesAndAns[i][0]);
+    answers = answers.toUpperCase();
+    while (correctAnswer === false){
+      if ((answers === quesAndAns[i][1] || answers === quesAndAns[i][2])) {
+        console.log(userName + ' got the answer right!');
+        quesAndAns[i][7].textContent = quesAndAns[i][5];
+        quesAndAns[i][7].yup = 'right';
+        count++;
+        break;
+      } else if((answers === quesAndAns[i][3] || answers === quesAndAns[i][4]) && (quesAndAns[0][0] || quesAndAns[2][0])) {
+        console.log(userName + ' got it wrong.');
+        quesAndAns[i][7].textContent = quesAndAns[i][6];
+        quesAndAns[i][7].nah = 'right';
+        break;
+      } else {
+        console.log(userName + ' has guessed an answer that is not possible.');
+        answers = prompt('I\'m sorry, ' + userName + ', you have guessed outside of your boundaries. Try again.').toUpperCase();
+      }
 
-
-function quesAndAns() {
-  var incorrectAnswer = true;
-  while (incorrectAnswer === true){
-    var A1 = prompt(quesData[i][0]).toUpperCase();
-    if (A1 === quesData[i][1] ||  A1 === quesData[i][2]) {
-      // answer is correct
-      console.log(userName + " got the answer right!");
-      quesData[i][7].textContent = quesData[i][5];
-      quesData[i][7].className = 'right';
-      count++;
-      incorrectAnswer = false;
-    } else if(A1 === quesData[i][3] || A1 === quesData[i][4]) {
-      // answer is false
-      console.log(userName + " got it wrong.");
-      quesData[i][7].textContent = quesData[i][6];
-      quesData[i][7].className = 'wrong';
-      incorrectAnswer = false;
-    } else {
-      // answer is not yes or no
-      console.log(userName + " has guessed an answer that is not possible.");
-      quesData[i][7].textContent = 'I\'m sorry, ' + userName + ', you have guessed outside of your boundaries, try again.';
     }
   }
 }
