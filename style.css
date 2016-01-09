@@ -1,9 +1,7 @@
-/* Correct Answers */
-.yup {
+.right {
   color: green;
 }
 
-/* Incorrect Answers */
-.nah {
-  color :red
+.wrong {
+  color: red;
 }
